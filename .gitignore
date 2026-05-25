@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -89,3 +90,6 @@ Thumbs.db
 # Other
 .temp/
 *.swp
+=======
+venv/
+>>>>>>> 04980689a9f65a06bef7d6cda86b105bc320431a
