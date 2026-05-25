@@ -1,16 +1,15 @@
-from flask import Flask, jsonify, request, send_from_directory, send_file
-import requests, random
+from flask import Flask, render_template, jsonify, request
+import requests
 
 app = Flask(__name__)
 
 # Define the API URLs
-joke_api_url  = "https://official-joke-api.appspot.com/random_joke"
+joke_api_url = "https://official-joke-api.appspot.com/random_joke"
 quote_api_url = "https://zenquotes.io/api/random"
 
 @app.route('/')
 def index():
-    # still serves your index.html
-    return send_file('index.html')
+    return render_template('index.html')
 
 @app.route('/get_quote', methods=['GET'])
 def get_quote():
@@ -35,12 +34,6 @@ def get_quote():
 
     except Exception:
         return jsonify({"quote": "Error fetching data"}), 500
-
-
-@app.route('/<path:filename>')
-def serve_file(filename):
-    return send_from_directory('.', filename)
-
 
 if __name__ == '__main__':
     app.run(debug=True)
