@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Random Joke or Quote Generator</title>
-    <link rel="stylesheet" href="/style.css">  <!-- Updated to point to the Flask route -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <!-- to add background image "bg1.webp" -->
     <style>
         body {
-            background-image: url('bg1.webp'); 
+            background-image: url("{{ url_for('static', filename='bg1.webp') }}");
             background-size: cover;
             font-family: Arial, sans-serif;
             color: #fff;
